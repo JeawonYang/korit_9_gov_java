@@ -24,12 +24,12 @@ public class SignupDto {
         this.password = password;
     }
 
-    public String getConfirmPassword() {
-        return confirmPassword;
+    public String getComfirmPassword() {
+        return comfirmPassword;
     }
 
-    public void setConfirmPassword(String confirmPassword) {
-        this.confirmPassword = confirmPassword;
+    public void setComfirmPassword(String comfirmPassword) {
+        this.comfirmPassword = comfirmPassword;
     }
 
     public User toUser() {
