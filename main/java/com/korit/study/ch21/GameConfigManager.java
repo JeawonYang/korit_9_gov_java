@@ -1,20 +1,19 @@
-package com.korit.study.ch22;
+package com.korit.study.ch21;
 
 import java.util.Objects;
 
 public class GameConfigManager {
     private volatile static GameConfigManager instance;
     private int soundVolume = 50;
-    private String resolution = "1280x780";
+    private String resolution = "1280x720";
 
-    public GameConfigManager(String resolution, int soundVolume) {
-        this.resolution = resolution;
-        this.soundVolume = soundVolume;
+    private GameConfigManager() {
+
     }
 
     public static GameConfigManager getInstance() {
         if (Objects.isNull(instance)) {
-            instance = new GameConfigManager("1280x780", 50);
+            instance = new GameConfigManager();
         }
         return instance;
     }
@@ -38,8 +37,8 @@ public class GameConfigManager {
     }
 
     public String getConfigInfo() {
-        String format = String.format("Sound: %d, Resolution: %s," +
-                soundVolume + resolution);
+        String format = String.format("Sound: %d, Resolution: %s",
+                soundVolume, resolution);
         return format;
     }
 }

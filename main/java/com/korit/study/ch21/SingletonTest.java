@@ -1,4 +1,4 @@
-package com.korit.study.ch22;
+package com.korit.study.ch21;
 
 public class SingletonTest {
     public static void main(String[] args) {
