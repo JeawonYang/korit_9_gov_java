@@ -9,8 +9,8 @@ import java.util.Objects;
 
 public class SignupService {
     // 1. instance static 변수 정의
-    private static SignupService instance;
-    private UserRepository userRepository;
+    private static SignupService instance;  // 싱글톤 인스턴스 생성
+    private UserRepository userRepository;  //
 
     private SignupService(UserRepository userRepository) {
         this.userRepository = userRepository;
