@@ -8,6 +8,7 @@ public class CollectionMain {
     public static void main(String[] args) {
         //문자열을 담울 수 있는 ArrayList 생성;
         ArrayList<String> list = new ArrayList<>();
+        List<String> list2 = new ArrayList<>();  //List 로 하면 ArrayList, LinkedList 모두 가능
 
         //값을 추가
         list.add("문자열 값 1");
