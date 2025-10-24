@@ -24,7 +24,7 @@ public class Function03 {
     static int sum(int n1, double n2) {
         return (int) (n1 + n2);
     }
-    static  int sum (double n2, int n1) {
+    static int sum (double n2, int n1) {
         return (int) (n1 + n2);
     }
 }
