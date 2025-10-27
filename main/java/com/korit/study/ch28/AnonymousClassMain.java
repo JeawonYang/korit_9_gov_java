@@ -6,7 +6,6 @@ public class AnonymousClassMain {
     public static void main(String[] args) {
         AnonymousClass a = new AnonymousClassImpl();
         a.fx1();
-        ;
         System.out.println(a.fx2());
 
         int num = 10;
