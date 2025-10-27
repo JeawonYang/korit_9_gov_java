@@ -1,5 +1,24 @@
 package com.korit.study.ch28;
 
+interface ClickListener {
+    void onClick();
+}
+
+class Button {
+    private ClickListener listener;
+
+    public void setClickListener(ClickListener listener) {
+        this.listener = listener;
+    }
+
+    public void click() {
+        if (listener != null) {
+            listener.onClick();
+        }
+    }
+}
+
+
 public class Main {
     public static void main(String[] args) {
         Button button = new Button();
