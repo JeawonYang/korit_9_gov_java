@@ -3,11 +3,9 @@ package com.korit.study.ch29;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.SortedMap;
 import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
+import java.util.function.*;
 import java.util.stream.Collectors;
 
 public class LambdaInterface {
@@ -70,7 +68,16 @@ public class LambdaInterface {
             System.out.println("숫자 : " + d);
         }).accept(3.14);
 
-        //3. Supplier : 매00000000000000000000000000000000개변수 x 리턴 o
+        //forEach()
+        List<String> nameList = List.of("김준일", "김준이");
+        nameList.forEach(n -> {
+                    System.out.println(n);
+                            System.out.println(n);
+                            System.out.println(n);
+                            nameList.forEach(System.out :: println); //람다 메서드 참조
+                });
+
+        //3. Supplier : 매개변수 x 리턴 o
         String str = null;
         Supplier<Boolean> booleanSupplier = () -> Objects.isNull(str);
         System.out.println(booleanSupplier.get());
@@ -84,7 +91,8 @@ public class LambdaInterface {
         String functionResult = function.apply(10);
         System.out.println(functionResult);
 
-        Integer functionResult2 = function.andThen(s -> {
+        Integer functionResult2 = function
+                .andThen(s -> {
             System.out.println("문자열 정수 받아서 실수자료형으로 리턴");
             return Double.parseDouble(s);
         })
@@ -138,6 +146,12 @@ public class LambdaInterface {
                 .collect(Collectors.toList())
                 .getFirst();
         System.out.println(foundName);
+
+        //매개변수o, 리턴o 둘의 자료형이 동일하면
+        UnaryOperator<String> f1 = s -> s + "문자열";
+        Function <String, String> f2 = s -> s + "문자열";
+        BiFunction<String, String, String> f3 = (s1 ,s2) -> s1 + s2;
+        BinaryOperator<String> f4 = (s1, s2) -> s1 + s2;
     }
 }
 
