@@ -1,15 +1,14 @@
 package com.korit.study.ch30;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-class Person {
+class Person1 {
     private String name;
     private int age;
 
-    public Person(String name, int age) {
+    public Person1(String name, int age) {
         this.name = name;
         this.age = age;
     }
