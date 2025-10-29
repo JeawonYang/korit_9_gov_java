@@ -54,7 +54,7 @@ public class StreamQuestion27 {
                 new Item1("웹캠", 0, false, 60000)
         );
         List<String> Sales = items.stream()
-                .filter(sale -> sale.isOnSale() && sale.getStock() != 0)
+                .filter(sale -> sale.isOnSale() && sale.getStock() > 0)
                 .map(Item1 :: getName)
                 .collect(Collectors.toList());
         System.out.println(Sales);

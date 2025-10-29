@@ -25,10 +25,10 @@ class Person1 {
 public class StreamQuestion5 {
     public static void main(String[] args) {
 
-        List<Person> peoples = Arrays.asList(
-                new Person("Alice", 25),
-                new Person("Bob", 30),
-                new Person("Charlie", 35)
+        List<Person1> peoples = Arrays.asList(
+                new Person1("Alice", 25),
+                new Person1("Bob", 30),
+                new Person1("Charlie", 35)
         );
         List<String> Names = peoples.stream()
                 .map(people -> people.getName())

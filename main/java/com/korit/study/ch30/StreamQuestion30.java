@@ -17,7 +17,8 @@ public class StreamQuestion30 {
                 LocalDate.of(2024, 1, 14)  // 일요일
         );
         List<LocalDate> 주말 = dates.stream()
-                .filter(date -> date.getDayOfWeek() == DayOfWeek.SATURDAY || date.getDayOfWeek() == DayOfWeek.SUNDAY)
+                .filter(date -> date.getDayOfWeek() == DayOfWeek.SATURDAY
+                        || date.getDayOfWeek() == DayOfWeek.SUNDAY)
                 .collect(Collectors.toList());
         System.out.println(주말);
     }
