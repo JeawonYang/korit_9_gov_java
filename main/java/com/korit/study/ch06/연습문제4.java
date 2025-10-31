@@ -1,17 +1,22 @@
 package com.korit.study.ch06;
 
-import java.util.Date;
-
 public class 연습문제4 {
     public static void main(String[] args) {
-        String result =isNowTime(11,40);
-        System.out.println(isNowTime(11,45));
-
+        int result = calculate(5, 10, 15 ,20);
+        System.out.println("결과: " + result);
     }
-    public static String isNowTime(int hours, int minutes) {
-        Date now = new Date();
-        int nowHours = now.getHours();
-        int nowMinutes = now.getMinutes();
-        return hours == nowHours && minutes == nowMinutes ?  "현재 시간입니다." : "현재 시간이 아닙니다.";
+
+    public static int add(int a, int b) { return a + b; }
+    public static int multiply(int a, int b) { return a * b; }
+    public static int subtract(int a, int b) { return a - b; }
+
+    // (a + b) * c - d 를 계산하는 함수를
+    // 위의 함수들을 이용해서 작성하세요
+    public static int calculate(int a, int b, int c, int d) {
+        int addResult = add(a, b);
+        int mulResult = multiply(addResult, c);
+        int subResult = subtract(mulResult, d);
+
+        return subtract(multiply(add(a, b), c), d);
     }
 }

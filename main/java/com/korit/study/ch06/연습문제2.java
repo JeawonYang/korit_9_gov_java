@@ -1,12 +1,39 @@
 package com.korit.study.ch06;
 
 public class 연습문제2 {
+
     public static void main(String[] args) {
-        helloName("양재원");
+        printInfo("김준일", 32, "부경대");
+        printInfo("김준일", 32);
+        printInfo("김준일");
     }
-    // 매개변수 있음, 리턴값 없음
-    // 이름을 받아서 "안녕하세요, [이름]님!"을 출력하는 함수를 작성하세요
-    public static void helloName (String name) {
-        System.out.println("안녕하세요," + name + "님!");
+
+    public static int add(int a, int b) {
+        return a + b;
     }
+
+    // 실수 2개를 더하는 함수를 오버로딩으로 작성하세요
+    public static int add(double a, double b) {
+        return (int) (a + b);
+    }
+
+    // 정수 3개를 더하는 함수를 오버로딩으로 작성하세요
+    public static int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    public static void printInfo(String name) {
+        System.out.println("이름: " + name);
+    }
+
+    public static void printInfo(String name, int age) {
+        printInfo(name);
+        System.out.println("나이: " + age);
+    }
+
+    public static void printInfo(String name, int age, String school) {
+        printInfo(name, age);
+        System.out.println("학교: " + school);
+    }
+
 }
