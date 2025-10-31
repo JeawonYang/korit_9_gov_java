@@ -1,4 +1,6 @@
-package com.korit.study.ch32;
+package com.korit.study.ch33;
+
+import com.korit.study.ch21.ClassA;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,21 +14,22 @@ public class FirstEchoServer {
         final int PORT = 5000;
 
         try {
-            ServerSocket serverSocket =new ServerSocket(PORT);
+            ServerSocket serverSocket = new ServerSocket(PORT);
             System.out.println("에코 서버 실행");
 
             Socket socket = serverSocket.accept();
             System.out.println("클라이언트 연결");
-            System.out.println("IP : " + socket.getInetAddress());
-            System.out.println(socket.getPort());
+            System.out.println("IP: " + socket.getInetAddress());
+            System.out.println("포트번호: " + socket.getPort());
 
             BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             PrintWriter writer = new PrintWriter(socket.getOutputStream());
 
             String message = reader.readLine();
-            System.out.println("메세지 내용 : " + message);
+            System.out.println("메세지 내용: " + message);
 
-            writer.println("서버 응답 내용 : " + message);
+            writer.println("서버 응답 내용: " + message);
+            writer.flush();
 
             reader.close();
             writer.close();

@@ -1,4 +1,4 @@
-package com.korit.study.ch32;
+package com.korit.study.ch33;
 
     class Counter {
         private int count = 0;

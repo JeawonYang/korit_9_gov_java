@@ -1,4 +1,4 @@
-package com.korit.study.ch32;
+package com.korit.study.ch33;
 
 class ThreadTest extends Thread {
     private String threadName;
